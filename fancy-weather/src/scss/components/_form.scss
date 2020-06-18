@@ -1,0 +1,99 @@
+.search-form  {
+
+  @include centered-row-flex;
+
+  .input {
+    @include input-border;
+    @include centered-row-flex;
+    height: $input-height;
+    box-sizing: border-box;
+
+    &__loader {
+      @include input-icon;
+    }
+
+    &__mike {
+      @include input-icon;
+      width: 25px;
+      box-sizing: border-box;
+     
+    }
+    .active {
+
+      animation: color-change 5s infinite;
+    }
+
+    @keyframes color-change {
+      0% { color: #588bce; 
+      font-size: 2rem;}
+      25% { color: greenyellow;
+        font-size: 3rem; }
+      50% { color: red; 
+        font-size: 2rem;}
+      75% { color: greenyellow;
+        font-size:3rem; }
+      100% { color: red; 
+        font-size: 2rem;}
+    }
+
+    &__keyboard {
+      @include input-icon;
+      margin: 0 10px;
+      
+      @media (max-width: $tablet-width) {
+        display: none;
+      }
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    &__search {
+      @include no-bordered($border-radius);
+      @include mainFont( $half-font-size, $bold, $title-color);
+      margin: 0 5px 0 10px;
+      outline: none;
+      width: 80%;
+      text-transform: capitalize;
+      background-color: transparent;
+      &::placeholder {
+        opacity: 0.2;
+        color: $title-color;
+      }
+    }
+  }
+
+    
+  .search-button {
+    @include mainFont( $half-font-size, $medium, $title-color);
+    
+    height: $input-height;
+    
+    border: none;
+    border-radius: 0 $border-radius $border-radius 0;
+    
+    outline: none;
+    cursor: pointer;
+
+    background-color: $button-background;
+    min-width: $search-min-width;
+
+    &:hover {
+      color: $color-hover-button;
+      background-color: $button-background-hover;
+    }
+  }
+  
+  @media (max-width: $vertical-orient) {
+    width: 100%;
+
+    .search-button {
+      width: 20%;
+    }
+
+    .input {
+      width: 80%;
+    }
+  }
+}

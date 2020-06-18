@@ -1,0 +1,70 @@
+#keyboard {
+  width: 350px;
+  margin: 0 auto;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: rgb(88, 139, 206);
+  border: 1px solid;
+  padding: 5px 5px 0 0;
+  border-radius: 5px;
+ 
+  @media (max-width: $mobile-big-width) {
+      display: none;
+  }
+}
+
+.key {
+  font-family: "Courier New", sans-serif;
+  float: left;
+  width: 20px;
+  height: 40px;
+  margin-left: 6px;
+  margin-bottom: 6px;
+  font-weight: 500;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  background: #3A4293;
+  border-radius: 3px;
+  cursor: pointer;
+  user-select: none;
+  opacity: 0.9;
+  transition: border-radius .2s, opacity .2s, background-color .2s; 
+  &:hover {
+    background: rgb(122, 133, 245);
+  }
+}
+
+.Backspace,
+.Enter{
+  font-size: 15px;
+  background: #151a22;
+  &:hover {
+    background: #585858;
+  }
+}
+
+.Backspace {
+  width: 84px;
+}
+.Delete {
+  width: 32px;
+}
+
+.Enter{
+  width: 58px;
+}
+
+.Space {
+  width: 110px;
+}
+
+.ru-en {
+  width: 32px;
+  font-size: 17px;
+  background: #151a22;
+  &:hover {
+    background: #585858;
+  }
+}

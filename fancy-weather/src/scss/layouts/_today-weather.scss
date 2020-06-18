@@ -1,0 +1,81 @@
+.today-weather-block {
+  @include block-template;
+  @include centered-row-flex ;
+  @include mainFont( $half-font-size, $bold, $title-color);
+  
+  flex-direction: column;
+  margin-bottom: $block-margin;
+  flex-grow: 3;
+
+  .place {
+    margin: 0 0 $common-indent;
+    font-size: $desktop-place-font-size;
+    flex-grow: 1;
+    &__name {
+      text-transform: uppercase;
+    }
+  }
+
+  .today {
+    &__info {
+      @include centered-row-flex ;
+      flex-grow: 1;
+    }
+
+    &__date{
+      margin-right: $double-indent;
+    }
+
+    &__day-of-weak {
+      text-transform: capitalize;
+    }
+  }
+
+  .today-weather {
+    @include centered-row-flex;
+    width: 100%;
+    flex-grow: 10;
+
+    &__temperature {
+      flex-grow: 1;
+      @include centered-row-flex;
+      font-size: $temperature-size;
+    }
+
+    &__summary {
+      text-transform: capitalize;
+    }
+
+    &__description {
+      flex-grow: 2;
+      @media (max-width: $mobile-big-width) {
+        font-size: 1.5rem;
+      }
+    }
+
+    &__attributes p {
+      margin: $main-block-mobile-margin;
+    }
+
+    &__img {
+      & img {
+        height: 16rem; 
+        transform: scale(1.5);
+      }   
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    img {
+      display: none;
+    }
+    .today-weather{
+      &__temperature {
+        font-size: $temperature-small-size;
+      }  
+    }
+    .place {
+      font-size: 3rem;
+    }
+  }
+}

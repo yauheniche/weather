@@ -1,0 +1,61 @@
+.controls {
+  @include block-template;
+  @include centered-row-flex ;
+  justify-content: space-between;
+  margin-bottom: $block-margin;
+
+  width: 100%;
+  height: max-content;
+
+  &__contacts {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    .item {
+      margin:  0 $common-indent;
+      justify-content: center;
+      a {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: rgb(253, 255, 224);
+      }
+    }
+  }
+
+  &__btn-container {
+    @include centered-row-flex ;
+    @include mainFont( $half-font-size, $bold, $title-color);
+    height: $control-btn-height;
+  }
+  &__item {
+    margin: 0 $common-indent/2;
+    height: $control-btn-height;
+    .temperature-buttons {
+      height:$control-btn-height;
+      @include centered-row-flex;
+    }
+  }
+
+  .languages {
+    * {
+      background: $button-background;
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    flex-direction: column;
+
+    &__btn-container {
+      margin-bottom: $vertical-indent/2;
+      width: 100%;
+    }
+    &__contacts { 
+      margin-bottom: $vertical-indent/4;
+      width: 100%;
+    }
+  }
+}

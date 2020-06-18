@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:300,600,700&display=swap&subset=latin-ext" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+  <link rel="stylesheet" href="/dist/app.css">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css" rel="stylesheet" />
+  <title>Fancy Weather</title>
+</head>
+<body>
+  <div class="app-wrapper" id="app">
+    <div class="controls">
+      <div class="controls__btn-container">
+        <div class="controls__item">
+          <button class="bg-refresh item"><i class="fas fa-sync-alt"></i></button>
+          <button class="item" id="say-btn"><i class="fas fa-volume-up"></i></button>
+          <button class="item" id="contacts-btn"><i class="far fa-address-card"></i></button>
+        </div>
+        <div class="controls__item ">
+          <select id="lang" class="languages item">
+            <option value="en" selected>en</option>
+            <option value="ru">ru</option>
+            <option value="be">be</option>
+          </select>
+        </div>
+        <div class="controls__item">
+          <div class="temperature-buttons" id = "tempToggle">
+            <button class="item" id="celsius-btn">&#176;C</button>
+            <button class="item" id="fahrenheit-btn">&#176;F</button>
+          </div>
+        </div>
+      </div>
+      <div class="controls__contacts hidden">
+        <div class="item" ><a href="https://jobs.tut.by/resume/f9d70c22ff07f7f3b40039ed1f68515a486f41#key-skills" target="_blank"><img src="./src/assets/animated/logo_tut.svg" alt="" srcset=""></a></div>
+        <div class="item" ><a href="https://id.dev.by/users/cherkasyauheni" target="_blank"><img src="./src/assets/animated/logo_dev.svg" alt="" srcset=""></a></div>
+        <div class="item" ><a href="https://www.linkedin.com/in/%D0%B5%D0%B2%D0%B3%D0%B5%D0%BD%D0%B8%D0%B9-%D1%87%D0%B5%D1%80%D0%BA%D0%B0%D1%81-6ba88b198/" target="_blank"><i class="fab fa-linkedin-in"></i></a></div>
+      </div>
+      <form action="" class="search-form" id="form">
+        <div class="input">
+          <div class="input__loader hidden"><i class="fas fa-spinner fa-spin"></i></div>
+          <input type="text" class="input__search" name="searchInput" id="searchInput" placeholder="Enter city" autocomplete="off">
+          <div class="input__mike" id="voiceButton"><i class="fas fa-microphone"></i></div>
+          <div class="input__keyboard" id="keyboardOpener"><i class="fas fa-keyboard"></i></div>
+        </div>
+        <button class="search-button" type="submit" >Search</button>
+      </form>
+    </div>
+    <div class="weather-wrapper">
+      <div class="today-weather-block">
+        <p class="place">
+          <span class="place__name" id='city'></span> <span class="place__country" id='country'></span>
+        </p>
+        <div class="today__info">
+          <div class="today__date" id = "date"></div>
+          <div class="today__time"></div>
+        </div>
+        <div class="today-weather">
+          <div class="today-weather__temperature temperature"></div>
+          <div class="today-weather__description">
+            <div class="today-weather__img" id="main-icon__container"></div>
+          </div>
+        </div>
+      </div>
+      <div class="forecast" id="forecast">
+      </div>
+    </div>
+    <div class="map-block">
+      <div class="map" id="map"></div>
+      <div class="coords">
+        <p class="coords__latitude"> </p>
+        <p class="coords__longitude"></p>
+      </div>
+    </div>
+  </div>
+  <div class="hidden" id="keyboard"></div>
+  <div class="error-message hidden" id="error-message"></div>
+  <script src="/dist/app.js"></script>
+</body>
+</html>

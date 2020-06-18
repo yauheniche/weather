@@ -1,0 +1,42 @@
+.forecast {
+  @include block-template;
+  @include centered-row-flex ;
+  @include mainFont( $half-font-size, $bold, $title-color);
+
+  justify-content: space-between;
+  text-align: center;
+  flex-grow: 1;
+
+  &__item{
+    width: 33%;
+    img {
+      transform: scale(1.5);
+    }
+  }
+
+  &__weather{
+    @include centered-row-flex ;
+  }
+
+  &__temperature {
+    margin-right: $double-indent;
+    @media (max-width: $mobile-big-width) { 
+      margin-right: 0;
+    }
+  }
+
+  &__day-of-weak {
+    &_short {
+      display: none;
+      @media (max-width: $vertical-orient) { 
+        display: block;
+      }
+    }
+    &_long {
+      display: block;
+      @media (max-width: $vertical-orient) { 
+        display: none;
+      }
+    }
+  }
+}

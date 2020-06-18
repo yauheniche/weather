@@ -1,0 +1,31 @@
+.temperature-buttons {
+  .item:first-child {
+    border-right: 0;
+    border-radius: $border-radius 0 0 $border-radius;
+  }
+
+  .item:last-child {
+    border-radius: 0 $border-radius $border-radius 0;
+  }
+  .active {
+    background-color: $color-active;
+  }
+}
+
+.item {
+  @include control-btn;
+  @include mainFont($half-font-size, $bold, $title-color) ;
+  height: 100%;
+  cursor: pointer;
+  
+  &:hover {
+    color: $color-hover-button;
+    background-color: $button-background-hover;
+  }
+}
+
+// .controls__item:first-child {
+//   .item:first-child {
+//     margin: 0 4px;
+//   }
+// }

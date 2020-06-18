@@ -1,0 +1,31 @@
+.app-wrapper {
+  opacity: 0;
+  padding: 10px;
+  min-width: 320px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  min-height: $min-height;
+  box-sizing: border-box;
+  transition: all 3s linear;
+
+  @media (max-width: $tablet-width) {
+    flex-direction: column;
+  }
+}
+.visible {
+  opacity: 1;
+}
+
+.weather-wrapper {
+
+  width: $half-app-width;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: $tablet-width) {
+    width: 100%;
+    margin-bottom: $double-indent;
+  }
+}

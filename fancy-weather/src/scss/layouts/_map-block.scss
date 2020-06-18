@@ -1,0 +1,51 @@
+.map-block {
+  @include block-template;
+  @include centered-row-flex ;
+  
+  align-items: flex-end;
+  position: relative;
+  margin-left: $double-indent;
+  width: $half-app-width;
+
+  height: calc( 90vh - 20px );
+
+  .map {
+    height: $map-height;
+    border-radius: 10px 10px 0 0;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 95% 95%, 0% 95%, 0% 0%);
+  }
+
+  .coords {
+    @include mainFont( $half-font-size, $bold, $title-color);
+    
+    & > * {
+      margin: 0 $common-indent;
+    }
+
+    @media (max-width: $vertical-orient) {
+      display: flex;
+      font-size: 1.4rem;
+      flex-direction: row;
+    }
+    
+    @media (max-width: $tablet-width) { 
+      display: flex;
+      flex-direction: row;
+    }
+    @media (max-width: $tablet-width) { 
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    width: 100%;
+    margin: 0;
+    flex-grow: 1;
+    height: auto;
+    padding-bottom: 0;
+  }
+
+
+
+}

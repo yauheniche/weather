@@ -1,0 +1,50 @@
+ @mixin block-template {
+  background-color: $block-background;
+  border-radius: $block-border-radius;
+  padding: $block-padding;
+  box-sizing: border-box;
+} 
+
+
+@mixin mainFont($size, $weight, $color) {
+  font-family: 'Quicksand', sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin centered-row-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin input-icon {
+  @include mainFont( $half-font-size, $thin, $input-icons-color);
+  border: none;
+  cursor: pointer;
+  &:hover {
+    color: $color-hover;
+  }
+}
+
+@mixin  input-border {
+  border: 1px solid $input-icons-color;
+  border-radius: $border-radius 0 0 $border-radius;
+  border-right: 0;
+}
+
+@mixin  control-btn {
+  border: 1px solid $input-icons-color;
+  border-radius: $border-radius;
+  min-width: $control-btn-height;
+  background-color: $button-background;
+  outline:none;
+  text-transform: capitalize;
+}
+
+@mixin no-bordered($radius) {
+  border: 0;
+  border-radius: $radius;
+}
+

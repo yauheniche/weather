@@ -1,0 +1,44 @@
+$block-background: rgba(51, 51, 51, 0.2);
+$button-background :rgb(119, 119, 119);
+
+$color-hover: rgb(88, 139, 206);
+$color-active: rgb(116, 155, 206);
+$color-hover-button:rgb(209, 255, 237);
+$button-background-hover:rgb(88, 139, 206);
+
+$title-color: rgb(255, 255, 255);
+$input-icons-color:  rgb(160, 160, 160);
+
+$main-title-size: 4rem;
+$desktop-place-font-size: 4rem;
+$half-font-size: $main-title-size/2;
+$temperature-size: 14rem;
+$temperature-small-size: 10rem;
+
+
+$border-radius: 10px;
+
+$input-height: 40px;
+$control-btn-height: 40px;
+$search-min-width: 80px;
+$map-height: 80%;
+
+$block-border-radius: 10px;
+$block-padding: 10px;
+$block-margin: 10px;
+$main-block-mobile-margin: 9px 0;
+$half-app-width: calc(50% - 5px);
+
+$common-indent: 5px;
+$double-indent: $common-indent*2;
+$vertical-indent: $common-indent*5;
+
+$bold: 700;
+$medium: 600;
+$thin: 300;
+
+//$content-width: 1220px;
+$tablet-width: 768px;
+$vertical-orient: 555px;
+$mobile-big-width: 414px;
+$min-height: 736px;
